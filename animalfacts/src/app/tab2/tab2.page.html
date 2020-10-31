@@ -1,0 +1,43 @@
+<ion-content [fullscreen]="true">
+  <link href="https://fonts.googleapis.com/css?family=Questrial|Raleway|Raleyway:700&display=swap"
+    rel="stylesheet">
+
+  <div id="content">
+
+    <div class="title">
+      <h1>CAT FACTS</h1><br>
+    </div>
+
+
+
+    <div class="grid-container">
+
+      
+
+      <div id="preCats">
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <!-- Chose a regular button as opposed to ion-button due to styling choices -->
+        <button (click)="showCatFacts()">Show Facts</button>
+      </div>
+
+      <div id="catFacts">
+        <br><br>       
+        <p style="color: lightslategray" id="catHelp">Click a fact for more information!</p>
+        <div id="cats" *ngFor="let fact of catFacts; let i=index" id="d{{i}}">
+          <ion-label (click)=showCatExtra(i)>{{fact}}</ion-label>
+          <p id="catExtra{{i}}"></p>
+        </div>
+      
+      </div>
+
+      <div class="grid-item">
+        <br><br><br>
+        <img src="../../assets/images/cats.gif" style="width: 50%">
+      </div>
+
+
+    </div>
+
+  </div>
+
+</ion-content>

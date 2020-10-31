@@ -1,0 +1,42 @@
+<ion-content [fullscreen]="true">
+  <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat|Raleway|Raleyway:700&display=swap"
+    rel="stylesheet">
+
+  <div id="content">
+
+    <div class="title">
+      <h1>DOG FACTS</h1><br>
+    </div>
+
+
+
+    <div class="grid-container">
+
+      <div class="grid-item">
+        <br><br><br>
+        <img src="../../assets/images/ivytilt.gif">
+      </div>
+
+      <div id="pre">
+        <br><br><br><br><br><br><br><br><br>
+        <!-- Chose a regular button as opposed to ion-button due to styling choices -->
+        <button (click)="showFacts()">Show Facts</button>
+      </div>
+
+      <div id="facts">
+        <br>
+        
+        <p style="color: lightslategray" id="dogHelp">Click a fact for more information!</p>
+        <div id="dogs" *ngFor="let fact of dogFacts; let i=index" id="d{{i}}">
+          <ion-label (click)=showExtra(i)>{{fact}}</ion-label>
+          <p id="extra{{i}}"></p>
+        </div>
+      
+      </div>
+
+
+    </div>
+
+  </div>
+
+</ion-content>
